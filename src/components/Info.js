@@ -1,8 +1,12 @@
 'use client'
+import { useSettings } from '@/app/context/SettingsContext';
 import React from 'react'
 import { useEffect, useState, useRef } from "react";
 
-function  Info({containerRef, show, setShow, sound, height, setHeight, allowSound, darkMode }) {
+function  Info({containerRef, show, setShow, sound, height, setHeight}) {
+
+  const { darkMode, setDarkMode, allowSound, setAllowSound } = useSettings();
+
 
 
   const boxRef = useRef(null)
@@ -15,9 +19,11 @@ function  Info({containerRef, show, setShow, sound, height, setHeight, allowSoun
 
       useEffect(()=>{
 
-        setBoxLeft(window.innerWidth-695)
-        boxLeftRef.current = window.innerWidth-695
-        boxDropLeftRef.current = window.innerWidth-695
+        if(boxDropLeftRef.current>window.innerWidth-695){
+          setBoxLeft(window.innerWidth-695)
+          boxLeftRef.current = window.innerWidth-695
+          boxDropLeftRef.current = window.innerWidth-695
+        }
 
         if(!zh){
           setZh(height)
@@ -39,7 +45,16 @@ function  Info({containerRef, show, setShow, sound, height, setHeight, allowSoun
 
 
   useEffect(()=>{
-    const checkSize = () => setIsMd(window.innerWidth >= 768);
+    const checkSize = () => {
+      setIsMd(window.innerWidth >= 768);
+      // if(boxDropLeftRef.current>window.innerWidth-695){
+      //     setBoxLeft(window.innerWidth-695)
+      //     boxLeftRef.current = window.innerWidth-695
+      //     boxDropLeftRef.current = window.innerWidth-695
+      //   }
+
+    
+    }
     checkSize(); 
     window.addEventListener('resize', checkSize);
     return () => window.removeEventListener('resize', checkSize);

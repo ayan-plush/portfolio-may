@@ -8,19 +8,20 @@ import Info from "@/components/Info";
 import Links from "@/components/Links";
 import ContactMe from "@/components/ContactMe";
 import { imagesArray } from "@/utils/cloudinaryExports";
+import { useSettings } from "./context/SettingsContext";
 
 
 
 export default function Home() {
-  const [soundon,setSoundon] = useState(true);
+  const [soundon,setSoundon] = useState(true); 
   const containerRef = useRef(null)
   const [showProjects,setShowProjects] = useState(false)
   const [showInfo,setShowInfo] = useState(false)
   const [showLinks,setShowLinks] = useState(false)
   const [showContact,setShowContact] = useState(false)
   const [height,setHeight] = useState(0)
-  const [allowSound, setAllowSound] = useState(true)
-  const [darkMode, setDarkMode] = useState(true)
+
+    const { darkMode, setDarkMode, allowSound, setAllowSound } = useSettings();
 
 
   
@@ -50,11 +51,11 @@ export default function Home() {
   };
 
   return ( 
-    <div ref={containerRef} className={`overflow-y-hidden h-screen max-h-screen ${darkMode?'bg-[#000]':'bg-[#f9fcea]'} flex flex-col justify-between items-center`}>
+    <div ref={containerRef} className={`overflow-y-hidden h-screen max-h-screen ${darkMode?'bg-[#000]':'bg-[#f9fcea]'} flex flex-col justify-between pt-[80px] items-center`}>
       <img src={imagesArray.darkPc} style={{ display: 'none' }} alt="" />
       <img src={imagesArray.pc} style={{ display: 'none' }} alt="" />
       
-      <Navbar allowSound={allowSound} setAllowSound={setAllowSound} darkMode={darkMode} setDarkMode={setDarkMode} />
+      {/* <Navbar allowSound={allowSound} setAllowSound={setAllowSound} darkMode={darkMode} setDarkMode={setDarkMode} /> */}
       {/* <Stickers/> */}
 
         <div
@@ -133,10 +134,6 @@ export default function Home() {
       </div>
 
 
-      <div className="w-1/4 h-[10px]">
-                  
-      </div>
-
       {/* <div  style={{
         top: `${boxTop-10}px`,
         left: `${boxLeft-150}px`
@@ -156,10 +153,10 @@ export default function Home() {
         
 
       </div> */}
-      <Projects containerRef={containerRef} show={showProjects} setShow={setShowProjects} sound={sound} height={height} setHeight={setHeight} allowSound={allowSound} darkMode={darkMode} />
-      <Info containerRef={containerRef} show={showInfo} setShow={setShowInfo} sound={sound} height={height} setHeight={setHeight} allowSound={allowSound} darkMode={darkMode} />
-      <Links containerRef={containerRef} show={showLinks} setShow={setShowLinks} sound={sound} height={height} setHeight={setHeight} allowSound={allowSound} darkMode={darkMode} />
-      <ContactMe containerRef={containerRef} show={showContact} setShow={setShowContact} sound={sound} height={height} setHeight={setHeight} allowSound={allowSound} darkMode={darkMode} />
+      <Projects containerRef={containerRef} show={showProjects} setShow={setShowProjects} sound={sound} height={height} setHeight={setHeight}  />
+      <Info containerRef={containerRef} show={showInfo} setShow={setShowInfo} sound={sound} height={height} setHeight={setHeight} />
+      <Links containerRef={containerRef} show={showLinks} setShow={setShowLinks} sound={sound} height={height} setHeight={setHeight} />
+      <ContactMe containerRef={containerRef} show={showContact} setShow={setShowContact} sound={sound} height={height} setHeight={setHeight} />
       
       
     </div>

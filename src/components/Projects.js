@@ -1,9 +1,13 @@
 'use client'
+import { useSettings } from '@/app/context/SettingsContext';
 import React from 'react'
 import { useEffect, useState, useRef } from "react";
 import { FaGithub,FaExternalLinkAlt,FaInfoCircle  } from "react-icons/fa";
 
-function Projects({containerRef, show, setShow, sound, height, setHeight, allowSound, darkMode }) {
+function Projects({containerRef, show, setShow, sound, height, setHeight }) {
+
+    const { darkMode, setDarkMode, allowSound, setAllowSound } = useSettings();
+
 
   const projectArray = [
     {
@@ -37,9 +41,11 @@ function Projects({containerRef, show, setShow, sound, height, setHeight, allowS
 
       useEffect(()=>{
 
-        setBoxLeft(window.innerWidth-705)
-        boxLeftRef.current = window.innerWidth-705
-        boxDropLeftRef.current = window.innerWidth-705
+        if(boxDropLeftRef.current>window.innerWidth-705){
+          setBoxLeft(window.innerWidth-705)
+          boxLeftRef.current = window.innerWidth-705
+          boxDropLeftRef.current = window.innerWidth-705
+        }
 
         if(!zh){
           setZh(height)
@@ -56,7 +62,16 @@ function Projects({containerRef, show, setShow, sound, height, setHeight, allowS
 
 
   useEffect(()=>{
-    const checkSize = () => setIsMd(window.innerWidth >= 768);
+    const checkSize = () => {
+      setIsMd(window.innerWidth >= 768);
+      // if(boxDropLeftRef.current>window.innerWidth-700){
+      //     setBoxLeft(window.innerWidth-700)
+      //     boxLeftRef.current = window.innerWidth-700
+      //     boxDropLeftRef.current = window.innerWidth-700
+      //   }
+
+    
+    }
     checkSize(); 
     window.addEventListener('resize', checkSize);
     return () => window.removeEventListener('resize', checkSize);

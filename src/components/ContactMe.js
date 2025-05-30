@@ -1,8 +1,12 @@
 'use client'
+import { useSettings } from '@/app/context/SettingsContext';
 import React from 'react'
 import { useEffect, useState, useRef } from "react";
 
-function ContactMe({containerRef, show, setShow, sound, height, setHeight, allowSound, darkMode }) {
+function ContactMe({containerRef, show, setShow, sound, height, setHeight }) {
+
+  const { darkMode, setDarkMode, allowSound, setAllowSound } = useSettings();
+
 
 
   const boxRef = useRef(null)
@@ -15,9 +19,12 @@ function ContactMe({containerRef, show, setShow, sound, height, setHeight, allow
 
       useEffect(()=>{
 
-        setBoxLeft(window.innerWidth-700)
-        boxLeftRef.current = window.innerWidth-700
-        boxDropLeftRef.current = window.innerWidth-700
+        if(boxDropLeftRef.current>window.innerWidth-700){
+          setBoxLeft(window.innerWidth-700)
+          boxLeftRef.current = window.innerWidth-700
+          boxDropLeftRef.current = window.innerWidth-700
+        }
+
 
         if(!zh){
           setZh(height)
@@ -39,7 +46,16 @@ function ContactMe({containerRef, show, setShow, sound, height, setHeight, allow
 
 
   useEffect(()=>{
-    const checkSize = () => setIsMd(window.innerWidth >= 768);
+    const checkSize = () => {
+      setIsMd(window.innerWidth >= 768);
+      // if(boxDropLeftRef.current>window.innerWidth-700){
+      //     setBoxLeft(window.innerWidth-700)
+      //     boxLeftRef.current = window.innerWidth-700
+      //     boxDropLeftRef.current = window.innerWidth-700
+      //   }
+
+    
+    }
     checkSize(); 
     window.addEventListener('resize', checkSize);
     return () => window.removeEventListener('resize', checkSize);
@@ -64,12 +80,12 @@ function ContactMe({containerRef, show, setShow, sound, height, setHeight, allow
     const onMouseDown = (e) => {
       isClicked.current=true
       boxLeftRef.current = e.clientX
-      console.log(boxLeftRef.current,"mouse position on down")
+      // console.log(boxLeftRef.current,"mouse position on down")
     }
     const onMouseUp = (e) => {
       isClicked.current=false
       boxDropLeftRef.current = boxDropLeftRef.current + e.clientX - boxLeftRef.current
-      console.log(boxDropLeftRef.current,"box position on up")
+      // console.log(boxDropLeftRef.current,"box position on up")
     }
     const onMouseMove = (e) => {
       if(!isClicked.current){
