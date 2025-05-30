@@ -27,11 +27,11 @@ function ContactMe({containerRef, show, setShow, sound, height, setHeight, allow
   const zee = height;
   
   const [boxTop,setBoxTop] = useState(90)
-  const [boxLeft,setBoxLeft] = useState(930)
+  const [boxLeft,setBoxLeft] = useState(window.innerWidth-700)
 
-  const boxLeftRef = useRef(930);
+  const boxLeftRef = useRef(window.innerWidth-700);
     const boxTopRef = useRef(90);
-    const boxDropLeftRef = useRef(930);
+    const boxDropLeftRef = useRef(window.innerWidth-700);
 
 
   useEffect(()=>{

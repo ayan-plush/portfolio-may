@@ -1,13 +1,35 @@
 'use client'
 import React from 'react'
 import { useEffect, useState, useRef } from "react";
+import { FaGithub,FaExternalLinkAlt,FaInfoCircle  } from "react-icons/fa";
 
 function Projects({containerRef, show, setShow, sound, height, setHeight, allowSound, darkMode }) {
+
+  const projectArray = [
+    {
+      name: "Lit Link",
+      description: "At LitLink, we believe that books are more than pages bound together—they are portals of human understanding and catalysts for connection. In a world increasingly fragmented by digital isolation, we are reimagining the book as a conduit of human experience. Our platform is not just about lending books; it's about creating a vibrant third space where stories flow freely, where strangers become companions.",
+      image: "https://res.cloudinary.com/decks92gf/image/upload/v1748445808/WhatsApp_Image_2025-05-28_at_20.52.05_p1mmo5.webp",
+      link: "https://github.com/ayan-plush/litlink-v3",
+      github: "https://github.com/ayan-plush/litlink-v3",
+      demo: "https://litlink-frontend.onrender.com/"
+    },
+    {
+      name: "WeatherIt",
+      description: " Built a responsive React app integrating GeoDB, OpenWeatherMap, and WAQI APIs to provide real-time weather, AQI data, and personalized activity suggestions for over 200,000+ cities worldwide.",
+      image: "https://res.cloudinary.com/decks92gf/image/upload/v1748532614/WhatsApp_Image_2025-05-29_at_20.58.16_kxwfm9.webp",
+      link: "https://github.com/ayan-plush/webit",
+      github: "https://github.com/ayan-plush/webit",
+      demo: "https://webit-six.vercel.app/"
+    }
+    
+  ]
 
 
   const boxRef = useRef(null)
 
   const [isMd,setIsMd] = useState(false)
+  
 
   const isClicked = useRef(false)
 
@@ -26,12 +48,7 @@ function Projects({containerRef, show, setShow, sound, height, setHeight, allowS
 
   const zee = height;
   
-  const [boxTop,setBoxTop] = useState(95)
-  const [boxLeft,setBoxLeft] = useState(910)
-
-  const boxLeftRef = useRef(910);
-    const boxTopRef = useRef(95);
-    const boxDropLeftRef = useRef(910);
+  
 
 
   useEffect(()=>{
@@ -40,6 +57,13 @@ function Projects({containerRef, show, setShow, sound, height, setHeight, allowS
     window.addEventListener('resize', checkSize);
     return () => window.removeEventListener('resize', checkSize);
   },[])
+
+  const [boxTop,setBoxTop] = useState(95)
+  const [boxLeft,setBoxLeft] = useState(window.innerWidth-700)
+
+  const boxLeftRef = useRef(window.innerWidth-700);
+  const boxTopRef = useRef(95);
+  const boxDropLeftRef = useRef(window.innerWidth-700);
 
   const dynamicStyle = isMd
     ? {
@@ -128,7 +152,28 @@ function Projects({containerRef, show, setShow, sound, height, setHeight, allowS
         </div>
         <div className="w-full h-full flex flex-col [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] gap-10 overflow-y-scroll ">
 
+          <div className=" flex flex-col gap-5 p-5 ">
 
+            { projectArray.map((proj,i)=> <div key={i} className="h-[320px]  flex max-md:flex-col py-3 items-center md:justify-between md:gap-3  w-full">
+                <div style={{ backgroundImage: `url(${proj.image})`}} className='md:w-[40%] w-full group overflow-hidden relative h-full bg-cover rounded-3xl '>
+                  <div className="w-full h-full bg-[#000000aa] md:hidden max-md:flex text-[#ffffff74] px-10 group-hover:flex justify-between items-center ">
+                    <a target="_blank" href={`${proj.github}`}><FaGithub className='w-[40px] cursor-pointer h-full' /></a>
+                    <a target="_blank" href={`${proj.demo}`}><FaExternalLinkAlt className='w-[40px] h-[40px] cursor-pointer bg-[#ffffff74] text-[#110B08] px-2 rounded-full' /></a>
+                    <a target="_blank" href={`${proj.link}`}><FaInfoCircle className='w-[40px] h-full cursor-pointer ' /></a>                  
+                  </div>
+                </div>
+                <div className={`md:w-[60%] max-md:hidden h-full flex gap-2 flex-col items-start p-5 ${darkMode? ' text-[#fff] ':' text-[#000]'} `}>
+                  <div className={`font-[impacted] uppercase text-4xl`}>{proj.name}</div>
+                  <div className={``}>{proj.description}</div>
+                </div>
+              </div>
+              
+               )
+
+            }
+
+          </div>
+          
         </div>
 
         

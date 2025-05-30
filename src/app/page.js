@@ -7,6 +7,7 @@ import Projects from "@/components/Projects";
 import Info from "@/components/Info";
 import Links from "@/components/Links";
 import ContactMe from "@/components/ContactMe";
+import { imagesArray } from "@/utils/cloudinaryExports";
 
 
 
@@ -18,7 +19,7 @@ export default function Home() {
   const [showLinks,setShowLinks] = useState(false)
   const [showContact,setShowContact] = useState(false)
   const [height,setHeight] = useState(0)
-  const [allowSound, setAllowSound] = useState(false)
+  const [allowSound, setAllowSound] = useState(true)
   const [darkMode, setDarkMode] = useState(true)
 
 
@@ -49,17 +50,24 @@ export default function Home() {
   };
 
   return ( 
-    <div ref={containerRef} className={`overflow-y-hidden h-screen max-h-screen ${darkMode?'bg-[#000]':'bg-[#f9fcea]'} flex flex-col justify-between items-center`}>      
+    <div ref={containerRef} className={`overflow-y-hidden h-screen max-h-screen ${darkMode?'bg-[#000]':'bg-[#f9fcea]'} flex flex-col justify-between items-center`}>
+      <img src={imagesArray.darkPc} style={{ display: 'none' }} alt="" />
+      <img src={imagesArray.pc} style={{ display: 'none' }} alt="" />
+      
       <Navbar allowSound={allowSound} setAllowSound={setAllowSound} darkMode={darkMode} setDarkMode={setDarkMode} />
       {/* <Stickers/> */}
-      <div className={`absolute select-none bg-linear-to-b  ${darkMode?'from-[#F47980] to-[#BD9CFD]':'from-[#F9C5D0] to-[#f9fcea]'}  max-w-[100dvw]  object-fit top-1/10 px-3 md:px-20 lg:top-1/8 bg-clip-text text-transparent font-extrabold overflow-hidden text-align-center text-[16dvw]  -tracking-[.15em]`} >PORTFOLIO</div>
 
+        <div
+        className={`
+          absolute select-none bg-gradient-to-b ${darkMode ? 'from-[#F47980] to-[#BD9CFD]' : 'from-[#F47980] to-[#f9fcea]'} max-w-[100dvw] top-1/7 px-3 md:px-20 lg:top-[12.5%] text-transparent bg-clip-text font-extrabold overflow-hidden text-center text-[16dvw] leading-[1] tracking-[-0.15em] `}>
+        PORTFOLIO
+      </div>
 
-      <div className= {`select-none relative max-sm:w-[400px] max-sm:h-[400px] max-lg:w-[500px] max-lg:h-[500px] w-[650px] h-[650px]  bg-center bg-contain bg-no-repeat bg-[url(https://res.cloudinary.com/decks92gf/image/upload/v1747677182/LPC_hr0a0k.webp)]`} >
+      <div style={{ backgroundImage: darkMode?`url(${imagesArray.darkPc})`:`url(${imagesArray.pc})` }} className= {`select-none relative max-sm:w-[400px] max-sm:h-[400px] max-lg:w-[500px] max-lg:h-[500px] w-[650px] max-w-[100dvw] h-[650px]  bg-center bg-contain bg-no-repeat `} >
         
-        <div className= {`absolute cursor-pointer top-2/45 flex flex-col min-w-[200px] items-center md:-right-3/45 md:hover:animate-bounce group`} ><img src="https://res.cloudinary.com/decks92gf/image/upload/v1747708849/f4d1e7fe8af3f2d63e72d4a3d4112336-removebg-preview_afgc8z.webp" className="h-[7dvw] w-[7dvw]" onClick={()=>{
+        <div className= {`absolute cursor-pointer top-2/45 max-md:-left-1/10 flex flex-col min-w-[200px] items-center md:-right-3/45 md:hover:animate-bounce group`} ><img src="https://res.cloudinary.com/decks92gf/image/upload/v1747708849/f4d1e7fe8af3f2d63e72d4a3d4112336-removebg-preview_afgc8z.webp" className="md:h-[100px] h-[60px] md:w-[100px] w-[60px] " onClick={()=>{
           if(allowSound){sparkle.play();}
-        }} /><span className="font-semibold text-[#C6494A] hidden md:group-hover:block ">My Hobbies ₍^. .^₎Ⳋ </span>
+        }} /><span className="font-semibold text-[#fff] hidden md:group-hover:block ">My Hobbies ₍^. .^₎Ⳋ </span>
         </div>
 
         <div className={`absolute flex z-10 h-28/60 w-13/20 top-6/45 justify-start p-3 left-1/5`}>
@@ -118,7 +126,7 @@ export default function Home() {
                     
         </div>
 
-        <img src='https://res.cloudinary.com/decks92gf/image/upload/v1747677179/LN_coejdy.webp' className={`absolute h-[30dvw] max-lg:hidden top-6/45 md:top-1/4 lg:right-4/5`}></img>
+        <img style={{ content: darkMode?`url(${imagesArray.darkSn})`:`url(${imagesArray.sn})` }} className={`absolute h-[30dvw] max-lg:hidden top-6/45 md:top-1/4 lg:right-4/5`}></img>
 
 
 

@@ -27,11 +27,11 @@ function  Info({containerRef, show, setShow, sound, height, setHeight, allowSoun
   const zee = height;
   
   const [boxTop,setBoxTop] = useState(90)
-  const [boxLeft,setBoxLeft] = useState(920)
+  const [boxLeft,setBoxLeft] = useState(window.innerWidth-710)
 
-  const boxLeftRef = useRef(920);
+  const boxLeftRef = useRef(window.innerWidth-710);
     const boxTopRef = useRef(90);
-    const boxDropLeftRef = useRef(920);
+    const boxDropLeftRef = useRef(window.innerWidth-710);
 
 
   useEffect(()=>{
@@ -117,7 +117,7 @@ function  Info({containerRef, show, setShow, sound, height, setHeight, allowSoun
     <div  style={dynamicStyle} className={` ${show?'':'hidden'} max-md:h-screen  border-2 max-md:fixed max-md:rounded-t-3xl max-md:mt-10 max-md:w-full select-none z-20 flex flex-col box md:absolute overflow-hidden md:w-[800px] md:h-[400px] md:rounded-3xl ${darkMode?'bg-[#212121] border-white':'bg-[#fff] border-black'} `}>
         
         <div ref={boxRef} className= {`px-5 sticky z-30 ${darkMode?'bg-[#6BD557] text-[#fff] border-b-white border-b-2':'bg-[#6BD557] text-[#fff]'}  top-0 flex items-center justify-between cursor-pointer w-full h-[50px] `}>
-          <div className="text-xl " >Info</div>
+          <div className="text-xl " >About Me</div>
           <div onClick={()=>{
                     if(allowSound){
                       sound.play();
@@ -127,6 +127,13 @@ function  Info({containerRef, show, setShow, sound, height, setHeight, allowSoun
                 }} className="text-xl hover:scale-110 ">[x]</div>
         </div>
         <div className="w-full h-full flex flex-col [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] gap-10 overflow-y-scroll ">
+          <div className="flex w-full h-full gap-5 p-5 ">
+            <div className={`bg-[#fff] w-1/3 h-[250px] flex items-center justify-center `}>
+                            <img src='https://res.cloudinary.com/decks92gf/image/upload/v1748533781/4627000b-01c7-41c8-94b5-43bebbb45d10_n10ws7.jpg' className={`rounded-full h-[200px] object-cover w-[200px]`}/>
+            </div>
+            <div className={`bg-[#fff] w-2/3 h-[250px]`}>
+            </div>
+          </div>
 
 
         </div>
