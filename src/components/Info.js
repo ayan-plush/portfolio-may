@@ -27,11 +27,11 @@ function  Info({containerRef, show, setShow, sound, height, setHeight, allowSoun
   const zee = height;
   
   const [boxTop,setBoxTop] = useState(90)
-  const [boxLeft,setBoxLeft] = useState(window.innerWidth-710)
+  const [boxLeft,setBoxLeft] = useState(900)
 
-  const boxLeftRef = useRef(window.innerWidth-710);
+  const boxLeftRef = useRef(900);
     const boxTopRef = useRef(90);
-    const boxDropLeftRef = useRef(window.innerWidth-710);
+    const boxDropLeftRef = useRef(900);
 
 
   useEffect(()=>{

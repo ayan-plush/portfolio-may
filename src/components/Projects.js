@@ -59,11 +59,11 @@ function Projects({containerRef, show, setShow, sound, height, setHeight, allowS
   },[])
 
   const [boxTop,setBoxTop] = useState(95)
-  const [boxLeft,setBoxLeft] = useState(window.innerWidth-700)
+  const [boxLeft,setBoxLeft] = useState(900)
 
-  const boxLeftRef = useRef(window.innerWidth-700);
+  const boxLeftRef = useRef(900);
   const boxTopRef = useRef(95);
-  const boxDropLeftRef = useRef(window.innerWidth-700);
+  const boxDropLeftRef = useRef(900);
 
   const dynamicStyle = isMd
     ? {
