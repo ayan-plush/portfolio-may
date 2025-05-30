@@ -37,6 +37,10 @@ function Projects({containerRef, show, setShow, sound, height, setHeight, allowS
 
       useEffect(()=>{
 
+        setBoxLeft(window.innerWidth-705)
+        boxLeftRef.current = window.innerWidth-705
+        boxDropLeftRef.current = window.innerWidth-705
+
         if(!zh){
           setZh(height)
         }

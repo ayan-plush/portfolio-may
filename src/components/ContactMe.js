@@ -15,6 +15,10 @@ function ContactMe({containerRef, show, setShow, sound, height, setHeight, allow
 
       useEffect(()=>{
 
+        setBoxLeft(window.innerWidth-700)
+        boxLeftRef.current = window.innerWidth-700
+        boxDropLeftRef.current = window.innerWidth-700
+
         if(!zh){
           setZh(height)
         }

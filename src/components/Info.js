@@ -15,6 +15,10 @@ function  Info({containerRef, show, setShow, sound, height, setHeight, allowSoun
 
       useEffect(()=>{
 
+        setBoxLeft(window.innerWidth-695)
+        boxLeftRef.current = window.innerWidth-695
+        boxDropLeftRef.current = window.innerWidth-695
+
         if(!zh){
           setZh(height)
         }

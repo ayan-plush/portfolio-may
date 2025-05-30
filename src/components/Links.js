@@ -15,6 +15,10 @@ function Links({containerRef, show, setShow, sound, height, setHeight, allowSoun
 
       useEffect(()=>{
 
+        setBoxLeft(window.innerWidth-690)
+        boxLeftRef.current = window.innerWidth-690
+        boxDropLeftRef.current = window.innerWidth-690
+
         if(!zh){
           setZh(height)
         }
