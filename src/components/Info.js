@@ -146,7 +146,7 @@ function  Info({containerRef, show, setShow, sound, height, setHeight}) {
                 }} className="text-xl hover:scale-110 ">[x]</div>
         </div>
         <div className=" font-lato w-full h-full flex flex-col [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] gap-10 overflow-y-scroll ">
-          <div className="flex w-full h-full gap-5 p-5 ">
+          <div className="flex max-md:flex-col max-md:items-start w-full h-full gap-5 p-5 ">
             <div className={`w-1/3 h-[280px] flex items-center justify-center `}>
                             <img src='https://res.cloudinary.com/decks92gf/image/upload/v1748533781/4627000b-01c7-41c8-94b5-43bebbb45d10_n10ws7.jpg' className={`rounded-full h-[250px] object-cover w-[250px]`}/>
             </div>
