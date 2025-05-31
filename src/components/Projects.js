@@ -151,7 +151,7 @@ function Projects({containerRef, show, setShow, sound, height, setHeight }) {
     box.addEventListener('mouseup',onMouseUp)
     return cleanup;
 
-  },[])
+  },[containerRef])
 
 
 
