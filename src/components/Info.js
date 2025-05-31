@@ -165,9 +165,9 @@ function  Info({containerRef, show, setShow, sound, height, setHeight}) {
 
                 <div className={`${darkMode?'text-[#fff]':'text-[#000]'} px-5 flex flex-col items-start  gap-5 font-light `}>
                   <div className={`text-lg`}>
-                    Hey super serious work people! i'm ayan, an undergrad software engineer at Delhi Technological University. I...<br/>
+                    Hey super serious work people! i&apos;m ayan, an undergrad software engineer at Delhi Technological University. I...<br/>
                     <ul className='list-disc text-md pl-5 ' >
-                      <li>create problems and find innovative ways to "fix" them with software engineering</li>
+                      <li>create problems and find innovative ways to &quot;fix&quot; them with software engineering</li>
                       <li>spend 90% of my time figuring out neo-vim.</li>
                       <li>also like to draw a lil :3 so excuse me if you find a doodle or two in the source code I was bored...</li>
                     </ul>
