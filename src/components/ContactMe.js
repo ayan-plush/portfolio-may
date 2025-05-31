@@ -134,7 +134,7 @@ function ContactMe({containerRef, show, setShow, sound, height, setHeight }) {
 
   return (
    <>
-    <div  style={dynamicStyle} className={` ${show?'':'hidden'} max-md:h-screen  border-2 max-md:fixed max-md:rounded-t-3xl max-md:mt-10 max-md:w-full select-none z-20 flex flex-col box md:absolute overflow-hidden md:w-[800px] md:h-[400px] md:rounded-3xl ${darkMode?'bg-[#212121] border-white':'bg-[#fff] border-black'} `}>
+    <div  style={dynamicStyle} className={` ${show?'':'hidden'} max-md:h-screen z-50  border-2 max-md:fixed max-md:rounded-t-3xl max-md:mt-10 max-md:w-full select-none  flex flex-col box md:absolute overflow-hidden md:w-[800px] md:h-[400px] md:rounded-3xl ${darkMode?'bg-[#212121] border-white':'bg-[#fff] border-black'} `}>
         
         <div ref={boxRef} className= {`px-5 sticky z-30 ${darkMode?'bg-[#E388AA] text-[#fff] border-b-white border-b-2':'bg-[#ffe542] text-[#fff]'}  top-0 flex items-center justify-between cursor-pointer w-full h-[50px] `}>
           <div className="text-xl " >Contact Me</div>

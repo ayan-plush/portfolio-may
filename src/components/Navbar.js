@@ -25,7 +25,7 @@ function Navbar() {
     const [hideSidebar,setHideSidebar] = useState(true);
     
   return (
-    <div className='h-[80px] w-full fixed z-50'>
+    <div className='h-[80px] w-full fixed z-49 '>
 
         <div className={hideSidebar?`fixed h-screen right-0 w-[350px]  flex-col gap-10 max-w-screen  bg-[#70D857] z-50 hidden`:`fixed h-screen bg-[#70D857] right-0 w-[350px] flex flex-col gap-10 max-w-screen z-50`}>
             <div  className="w-full h-[80px] px-10  flex justify-end items-center "> 

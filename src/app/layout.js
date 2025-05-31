@@ -1,14 +1,12 @@
-'use client'; 
-import { useState } from "react"; 
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { SettingsProvider } from './context/SettingsContext';
 
 
-// export const metadata = {
-//   title: "Ayan's World",
-//   description: "Welcome to my website :3",
-// };
+export const metadata = {
+  title: "Ayan's World",
+  description: "Welcome to my website :3",
+};
 
 export default function RootLayout({ children }) {
   return (

@@ -133,7 +133,7 @@ function  Info({containerRef, show, setShow, sound, height, setHeight}) {
 
   return (
    <>
-    <div  style={dynamicStyle} className={` ${show?'':'hidden'} max-md:h-screen  border-2 max-md:fixed max-md:rounded-t-3xl max-md:mt-10 max-md:w-full select-none z-20 flex flex-col box md:absolute overflow-hidden md:w-[800px] md:h-[400px] md:rounded-3xl ${darkMode?'bg-[#212121] border-white':'bg-[#fff] border-black'} `}>
+    <div  style={dynamicStyle} className={` ${show?'':'hidden'} max-md:h-screen z-50  border-2 max-md:fixed max-md:rounded-t-3xl max-md:mt-10 max-md:w-full select-none  flex flex-col box md:absolute overflow-hidden md:w-[800px] md:h-[400px] md:rounded-3xl ${darkMode?'bg-[#212121] border-white':'bg-[#F9FCEA] border-black'} `}>
         
         <div ref={boxRef} className= {`px-5 sticky z-30 ${darkMode?'bg-[#6BD557] text-[#fff] border-b-white border-b-2':'bg-[#6BD557] text-[#fff]'}  top-0 flex items-center justify-between cursor-pointer w-full h-[50px] `}>
           <div className="text-xl " >About Me</div>
@@ -145,14 +145,52 @@ function  Info({containerRef, show, setShow, sound, height, setHeight}) {
                     setShow(false);
                 }} className="text-xl hover:scale-110 ">[x]</div>
         </div>
-        <div className="w-full h-full flex flex-col [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] gap-10 overflow-y-scroll ">
+        <div className=" font-lato w-full h-full flex flex-col [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] gap-10 overflow-y-scroll ">
           <div className="flex w-full h-full gap-5 p-5 ">
-            <div className={`bg-[#fff] w-1/3 h-[250px] flex items-center justify-center `}>
-                            <img src='https://res.cloudinary.com/decks92gf/image/upload/v1748533781/4627000b-01c7-41c8-94b5-43bebbb45d10_n10ws7.jpg' className={`rounded-full h-[200px] object-cover w-[200px]`}/>
+            <div className={`w-1/3 h-[280px] flex items-center justify-center `}>
+                            <img src='https://res.cloudinary.com/decks92gf/image/upload/v1748533781/4627000b-01c7-41c8-94b5-43bebbb45d10_n10ws7.jpg' className={`rounded-full h-[250px] object-cover w-[250px]`}/>
             </div>
-            <div className={`bg-[#fff] w-2/3 h-[250px]`}>
+            <div className={`w-2/3 h-[280px] text-wrap flex flex-col  ${darkMode?'text-[#fff]':'text-[#000]'} items-start justify-center p-10 `}>
+                <div className={`text-5xl text-[#FB3E5A] font-semibold pb-5`} >
+                  Ayan Khajuria
+                </div>
+                <div className={`text-lg  font-light`}>
+                  Full-stack developer and ex heuristic logorrhea abstractor and generator at think-less co. <br/>
+                  Sofware Development Intern at <a className='text-[#5E9487] underline'>Infollion</a> <br/>
+                  <a className={`text-[#5E9487] underline`} >My Resume!!</a>
+                </div>
             </div>
           </div>
+          <div className="w-full h-full mb-10 ">
+
+                <div className={`${darkMode?'text-[#fff]':'text-[#000]'} px-5 flex flex-col items-start  gap-5 font-light `}>
+                  <div className={`text-lg`}>
+                    Hey super serious work people! i'm ayan, an undergrad software engineer at Delhi Technological University. I...<br/>
+                    <ul className='list-disc text-md pl-5 ' >
+                      <li>create problems and find innovative ways to "fix" them with software engineering</li>
+                      <li>spend 90% of my time figuring out neo-vim.</li>
+                      <li>also like to draw a lil :3 so excuse me if you find a doodle or two in the source code I was bored...</li>
+                    </ul>
+                    still interested in working with me? send me an email at <a className={`text-[#5E9487] underline`}>fwd.ayan@gmail.com</a>!:3
+
+                  </div>
+                  <div>
+                    <span className={`text-3xl text-[#FB3E5A] font-bold italic`}>EDUCATION</span>
+                    <ul className='list-disc text-md font-light pl-5'>
+                      <li>Bachelor of Technology in Software Engineering <br/> Delhi Technological University (2022-2026) </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <span className={`text-3xl text-[#FB3E5A] font-bold italic `} >OTHER INTERESTS</span>
+                    <ul className='list-disc text-md font-light pl-5'>
+                      <li>Literature Fiend!!</li>
+                      <li>Illustrator (procreate vetran)</li>
+                    </ul>
+                  </div>
+                </div>
+
+          </div>
+          
 
 
         </div>

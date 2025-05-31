@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @font-face{
   font-family: Bulbis;
   src: url("../assets/bulbisdemooutline-9yl3j.ttf");
 }
+
 @import "tailwindcss";
 
 @theme{
-  --font-bulbis: Bulbis, "sans-serif"
+  --font-bulbis: Bulbis, "sans-serif";
+  --font-zenKaku: Zen+Kaku+Gothic+New, "impacted";
+  --font-lato: "Lato", "impacted";
 }
 
 :root {
