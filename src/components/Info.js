@@ -133,7 +133,7 @@ function  Info({containerRef, show, setShow, sound, height, setHeight}) {
 
   return (
    <>
-    <div  style={dynamicStyle} className={` ${show?'':'hidden'} max-md:h-screen z-50  border-2 max-md:fixed max-md:rounded-t-3xl max-md:mt-10 max-md:w-full select-none  flex flex-col box md:absolute overflow-hidden md:w-[800px] md:h-[400px] md:rounded-3xl ${darkMode?'bg-[#212121] border-white':'bg-[#F9FCEA] border-black'} `}>
+    <div  style={dynamicStyle} className={` ${show?'':'hidden'} max-md:h-full max-md:bottom-0 z-50  border-2 max-md:fixed max-md:rounded-t-3xl max-md:mt-20 max-md:w-full select-none  flex flex-col box md:absolute overflow-hidden md:w-[800px] md:h-[400px] md:rounded-3xl ${darkMode?'bg-[#212121] border-white':'bg-[#F9FCEA] border-black'} `}>
         
         <div ref={boxRef} className= {`px-5 sticky z-30 ${darkMode?'bg-[#6BD557] text-[#fff] border-b-white border-b-2':'bg-[#6BD557] text-[#fff]'}  top-0 flex items-center justify-between cursor-pointer w-full h-[50px] `}>
           <div className="text-xl " >About Me</div>
@@ -147,10 +147,10 @@ function  Info({containerRef, show, setShow, sound, height, setHeight}) {
         </div>
         <div className=" font-lato w-full h-full flex flex-col [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] gap-10 overflow-y-scroll ">
           <div className="flex max-md:flex-col max-md:items-start w-full h-full gap-5 p-5 ">
-            <div className={`w-1/3 h-[280px] flex items-center justify-center `}>
+            <div className={`md:w-1/3 md:h-[280px] w-full flex items-center justify-center `}>
                             <img src='https://res.cloudinary.com/decks92gf/image/upload/v1748533781/4627000b-01c7-41c8-94b5-43bebbb45d10_n10ws7.jpg' className={`rounded-full h-[250px] object-cover w-[250px]`}/>
             </div>
-            <div className={`w-2/3 h-[280px] text-wrap flex flex-col  ${darkMode?'text-[#fff]':'text-[#000]'} items-start justify-center p-10 `}>
+            <div className={`md:w-2/3 md:h-[280px] text-wrap flex flex-col  ${darkMode?'text-[#fff]':'text-[#000]'} items-start justify-center p-10 `}>
                 <div className={`text-5xl text-[#FB3E5A] font-semibold pb-5`} >
                   Ayan Khajuria
                 </div>

@@ -41,10 +41,10 @@ function Projects({containerRef, show, setShow, sound, height, setHeight }) {
 
       useEffect(()=>{
 
-        if(boxDropLeftRef.current>window.innerWidth-705){
-          setBoxLeft(window.innerWidth-705)
-          boxLeftRef.current = window.innerWidth-705
-          boxDropLeftRef.current = window.innerWidth-705
+        if(boxDropLeftRef.current>window.innerWidth-710){
+          setBoxLeft(window.innerWidth-710)
+          boxLeftRef.current = window.innerWidth-710
+          boxDropLeftRef.current = window.innerWidth-710
         }
 
         if(!zh){
@@ -78,11 +78,11 @@ function Projects({containerRef, show, setShow, sound, height, setHeight }) {
   },[])
 
   const [boxTop,setBoxTop] = useState(95)
-  const [boxLeft,setBoxLeft] = useState(900)
+  const [boxLeft,setBoxLeft] = useState(890)
 
-  const boxLeftRef = useRef(900);
+  const boxLeftRef = useRef(890);
   const boxTopRef = useRef(95);
-  const boxDropLeftRef = useRef(900);
+  const boxDropLeftRef = useRef(890);
 
   const dynamicStyle = isMd
     ? {
@@ -157,7 +157,7 @@ function Projects({containerRef, show, setShow, sound, height, setHeight }) {
 
   return (
    <>
-    <div  style={dynamicStyle} className={` ${show?'':'hidden'} max-md:h-screen z-50 border-2 max-md:fixed max-md:rounded-t-3xl max-md:mt-10 max-md:w-full select-none  flex flex-col box md:absolute overflow-hidden md:w-[800px] md:h-[400px] md:rounded-3xl ${darkMode?'bg-[#212121] border-white':'bg-[#fff] border-black'} `}>
+    <div  style={dynamicStyle} className={` ${show?'':'hidden'} max-md:h-screen max-md:bottom-0 z-50 border-2 max-md:fixed max-md:rounded-t-3xl max-md:mt-10 max-md:w-full select-none  flex flex-col box md:absolute overflow-hidden md:w-[800px] md:h-[400px] md:rounded-3xl ${darkMode?'bg-[#212121] border-white':'bg-[#F9FCEA] border-black'} `}>
         
         <div ref={boxRef} className= {`px-5 sticky z-30 ${darkMode?'bg-[#C6494A] text-[#fff] border-b-white border-b-2':'bg-[#C6494A] text-[#fff]'}  top-0 flex items-center justify-between cursor-pointer w-full h-[50px] `}>
           <div className="text-xl " >Projects</div>
@@ -174,16 +174,27 @@ function Projects({containerRef, show, setShow, sound, height, setHeight }) {
           <div className=" flex flex-col gap-5 p-5 ">
 
             { projectArray.map((proj,i)=> <div key={i} className="h-[320px]  flex max-md:flex-col py-3 items-center md:justify-between md:gap-3  w-full">
+                <span className={`text-5xl font-lato font-bold pb-2 italic text-[#FB3E5A] md:hidden uppercase `}>{proj.name}</span>
                 <div style={{ backgroundImage: `url(${proj.image})`}} className='md:w-[40%] w-full group overflow-hidden relative h-full bg-cover rounded-3xl '>
-                  <div className="w-full h-full bg-[#000000aa] md:hidden max-md:flex text-[#ffffff74] px-10 group-hover:flex justify-between items-center ">
+                  <div className="w-full h-full bg-[#000000aa] md:hidden max-md:hidden text-[#ffffff74] px-10 md:group-hover:flex justify-between items-center ">
                     <a target="_blank" href={`${proj.github}`}><FaGithub className='w-[40px] cursor-pointer h-full' /></a>
                     <a target="_blank" href={`${proj.demo}`}><FaExternalLinkAlt className='w-[40px] h-[40px] cursor-pointer bg-[#ffffff74] text-[#110B08] px-2 rounded-full' /></a>
                     <a target="_blank" href={`${proj.link}`}><FaInfoCircle className='w-[40px] h-full cursor-pointer ' /></a>                  
                   </div>
                 </div>
+                <div className={`flex font-lato font-light italic text-[#5E9487] md:hidden gap-3 `}>
+                  <a className={`underline`} >Github</a>
+                  <a className={`underline`} >Demo</a>
+                  <a className={`underline`} >Learn More</a>
+                </div>
                 <div className={`md:w-[60%] max-md:hidden h-full flex gap-2 flex-col items-start p-5 ${darkMode? ' text-[#fff] ':' text-[#000]'} `}>
-                  <div className={`font-[impacted] uppercase text-4xl`}>{proj.name}</div>
-                  <div className={``}>{proj.description}</div>
+                  <div className={`font-lato font-bold italic text-[#FB3E5A] uppercase text-4xl`}>{proj.name}</div>
+                  <div className={`font-light font-lato`}>{proj.description}</div>
+                  <div className={`flex font-lato font-light italic text-[#5E9487] gap-3 `}>
+                  <a className={`underline`} >Github</a>
+                  <a className={`underline`} >Demo</a>
+                  <a className={`underline`} >Learn More</a>
+                </div>
                 </div>
               </div>
               

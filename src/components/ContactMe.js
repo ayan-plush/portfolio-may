@@ -19,10 +19,10 @@ function ContactMe({containerRef, show, setShow, sound, height, setHeight }) {
 
       useEffect(()=>{
 
-        if(boxDropLeftRef.current>window.innerWidth-700){
-          setBoxLeft(window.innerWidth-700)
-          boxLeftRef.current = window.innerWidth-700
-          boxDropLeftRef.current = window.innerWidth-700
+        if(boxDropLeftRef.current>window.innerWidth-680){
+          setBoxLeft(window.innerWidth-680)
+          boxLeftRef.current = window.innerWidth-680
+          boxDropLeftRef.current = window.innerWidth-680
         }
 
 
@@ -38,11 +38,11 @@ function ContactMe({containerRef, show, setShow, sound, height, setHeight }) {
   const zee = height;
   
   const [boxTop,setBoxTop] = useState(90)
-  const [boxLeft,setBoxLeft] = useState(900)
+  const [boxLeft,setBoxLeft] = useState(910)
 
-  const boxLeftRef = useRef(900);
+  const boxLeftRef = useRef(910);
     const boxTopRef = useRef(90);
-    const boxDropLeftRef = useRef(900);
+    const boxDropLeftRef = useRef(910);
 
 
   useEffect(()=>{
@@ -134,7 +134,7 @@ function ContactMe({containerRef, show, setShow, sound, height, setHeight }) {
 
   return (
    <>
-    <div  style={dynamicStyle} className={` ${show?'':'hidden'} max-md:h-screen z-50  border-2 max-md:fixed max-md:rounded-t-3xl max-md:mt-10 max-md:w-full select-none  flex flex-col box md:absolute overflow-hidden md:w-[800px] md:h-[400px] md:rounded-3xl ${darkMode?'bg-[#212121] border-white':'bg-[#fff] border-black'} `}>
+    <div  style={dynamicStyle} className={` ${show?'':'hidden'} max-md:bottom-0 max-md:h-screen z-50  border-2 max-md:fixed max-md:rounded-t-3xl max-md:mt-10 max-md:w-full select-none  flex flex-col box md:absolute overflow-hidden md:w-[800px] md:h-[400px] md:rounded-3xl ${darkMode?'bg-[#212121] border-white':'bg-[#fff] border-black'} `}>
         
         <div ref={boxRef} className= {`px-5 sticky z-30 ${darkMode?'bg-[#E388AA] text-[#fff] border-b-white border-b-2':'bg-[#ffe542] text-[#fff]'}  top-0 flex items-center justify-between cursor-pointer w-full h-[50px] `}>
           <div className="text-xl " >Contact Me</div>

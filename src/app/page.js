@@ -64,7 +64,7 @@ export default function Home() {
         PORTFOLIO
       </div>
 
-      <div style={{ backgroundImage: darkMode?`url(${imagesArray.darkPc})`:`url(${imagesArray.pc})` }} className= {`select-none relative max-sm:w-[400px] max-sm:h-[400px] max-lg:w-[500px] max-lg:h-[500px] w-[650px] max-w-[100dvw] h-[650px]  bg-center bg-contain bg-no-repeat `} >
+      <div style={{ backgroundImage: darkMode?`url(${imagesArray.darkPc})`:`url(${imagesArray.pc})` }} className= {`select-none relative max-md:mt-20 max-sm:w-[400px] max-sm:h-[400px] max-lg:w-[500px] max-lg:h-[500px] w-[650px] max-w-[100dvw] h-[650px]  bg-center bg-contain bg-no-repeat `} >
         
         <div className= {`absolute cursor-pointer top-2/45 max-md:-left-1/10 flex flex-col min-w-[200px] items-center md:-right-3/45 md:hover:animate-bounce group`} ><img src="https://res.cloudinary.com/decks92gf/image/upload/v1747708849/f4d1e7fe8af3f2d63e72d4a3d4112336-removebg-preview_afgc8z.webp" className="md:h-[100px] h-[60px] md:w-[100px] w-[60px] " onClick={()=>{
           if(allowSound){sparkle.play();}
