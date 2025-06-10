@@ -130,7 +130,7 @@ export default function Home() {
 
         <img style={{ content: darkMode?`url(${imagesArray.darkSn})`:`url(${imagesArray.sn})` }} className={`absolute h-[30dvw] max-lg:hidden top-6/45 md:top-1/4 lg:right-4/5`}></img>
 
-        <img onClick={() => setIsGifPlaying(!isGifPlaying)} style={{ content: isGifPlaying?`url(${imagesArray.playGif})`:`url(${imagesArray.frameGif})` }} className={`absolute h-[15dvw] max-lg:hidden top-10/45 md:top-1/2 lg:-right-1/4`}></img>
+        {/* <img onClick={() => setIsGifPlaying(!isGifPlaying)} style={{ content: isGifPlaying?`url(${imagesArray.playGif})`:`url(${imagesArray.frameGif})` }} className={`absolute h-[15dvw] max-lg:hidden top-10/45 md:top-2/3 lg:-right-1/4`}></img> */}
 
       </div>
 
