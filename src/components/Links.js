@@ -18,10 +18,10 @@ function Links({containerRef, show, setShow, sound, height, setHeight }) {
 
       useEffect(()=>{
 
-        if(boxDropLeftRef.current>window.innerWidth-690){
-          setBoxLeft(window.innerWidth-690)
-          boxLeftRef.current = window.innerWidth-690
-          boxDropLeftRef.current = window.innerWidth-690
+        if(boxDropLeftRef.current>window.innerWidth-300){
+          setBoxLeft(window.innerWidth-300)
+          boxLeftRef.current = window.innerWidth-300
+          boxDropLeftRef.current = window.innerWidth-300
         }
 
         if(!zh){
@@ -102,8 +102,8 @@ function Links({containerRef, show, setShow, sound, height, setHeight }) {
         const mouseX = boxDropLeftRef.current + e.clientX - boxLeftRef.current ;
         const mouseY = e.clientY - containerRect.top;
 
-        const maxX = containerRect.width - 700;
-        const maxY = containerRect.height - 400;
+        const maxX = containerRect.width - 300;
+        const maxY = containerRect.height - 500;
 
         const clampedX = Math.max(0, Math.min(mouseX, maxX));
         const clampedY = Math.max(0, Math.min(mouseY, maxY));
@@ -132,7 +132,7 @@ function Links({containerRef, show, setShow, sound, height, setHeight }) {
 
   return (
    <>
-    <div  style={dynamicStyle} className={` ${show?'':'hidden'} max-md:h-screen z-50 max-md:bottom-0 border-2 max-md:fixed max-md:rounded-t-3xl max-md:mt-10 max-md:w-full select-none  flex flex-col box md:absolute overflow-hidden md:w-[800px] md:h-[400px] md:rounded-3xl ${darkMode?'bg-[#212121] border-white':'bg-[#fff] border-black'} `}>
+    <div  style={dynamicStyle} className={` bg-[#097BF9] ${show?'':'hidden'} items-center max-md:h-screen z-50 max-md:bottom-0 border-2 max-md:fixed max-md:rounded-t-3xl max-md:mt-10 max-md:w-full select-none  flex flex-col box md:absolute overflow-hidden md:w-[300px] md:h-[500px] md:rounded-3xl ${darkMode?'bg-[#212121] border-white':'bg-[#097BF9] border-black'} `}>
         
         <div ref={boxRef} className= {`px-5 sticky z-30 ${darkMode?'bg-[#097BF9] text-[#fff] border-b-white border-b-2':'bg-[#097BF9] text-[#fff]'}  top-0 flex items-center justify-between cursor-pointer w-full h-[50px] `}>
           <div className="text-xl " >Links</div>
@@ -144,8 +144,7 @@ function Links({containerRef, show, setShow, sound, height, setHeight }) {
                     setShow(false);
                 }} className="text-xl hover:scale-110 ">[x]</div>
         </div>
-        <div className="w-full h-full flex flex-col [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] gap-10 overflow-y-scroll ">
-
+        <div className="w-[250px] bg-[#fff] h-[400px] rounded-3xl flex flex-col [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] gap-10 overflow-y-scroll ">
 
         </div>
 
