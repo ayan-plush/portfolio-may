@@ -157,7 +157,7 @@ function Projects({containerRef, show, setShow, sound, height, setHeight }) {
 
   return (
    <>
-    <div  style={dynamicStyle} className={` ${show?'':'hidden'} max-md:h-screen max-md:bottom-0 z-50 border-2 max-md:fixed max-md:rounded-t-3xl max-md:mt-20 max-md:w-full select-none  flex flex-col box md:absolute overflow-hidden md:w-[800px] md:h-[400px] md:rounded-3xl ${darkMode?'bg-[#212121] border-white':'bg-[#F9FCEA] border-black'} `}>
+    <div  style={dynamicStyle} className={` ${show?'':'hidden'} max-md:h-full max-md:bottom-0 z-50 border-2 max-md:fixed max-md:rounded-t-3xl max-md:mt-20 max-md:w-full select-none  flex flex-col box md:absolute overflow-hidden md:w-[800px] md:h-[400px] md:rounded-3xl ${darkMode?'bg-[#212121] border-white':'bg-[#F9FCEA] border-black'} `}>
         
         <div ref={boxRef} className= {`px-5 sticky z-30 ${darkMode?'bg-[#C6494A] text-[#fff] border-b-white border-b-2':'bg-[#C6494A] text-[#fff]'}  top-0 flex items-center justify-between cursor-pointer w-full h-[50px] `}>
           <div className="text-xl " >Projects</div>
