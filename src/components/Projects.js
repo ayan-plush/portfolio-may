@@ -11,6 +11,14 @@ function Projects({containerRef, show, setShow, sound, height, setHeight }) {
 
   const projectArray = [
     {
+      name: "NitiKnow",
+      description: "Nitiknow addresses the growing gap in political transparency caused by declining media accountability. Built as a full-stack solution, it systematically collects and structures public data on 500+ MPs and 4,000+ MLAs using automated scraping pipelines (Playwright, Selenium) and NLP techniques. ML-driven article summarization and entity linking ensure relevant, concise insights.",
+      image: "https://res.cloudinary.com/decks92gf/image/upload/v1754411479/nitiknow_l8axxm.jpg",
+      link: "https://github.com/ayan-plush/nitiknowbackend",
+      github: "https://github.com/ayan-plush/nitiknowbackend",
+      demo: "https://nitiknow.onrender.com/"
+    },
+    {
       name: "Lit Link",
       description: "At LitLink, we believe that books are more than pages bound together—they are portals of human understanding and catalysts for connection. In a world increasingly fragmented by digital isolation, we are reimagining the book as a conduit of human experience. Our platform is not just about lending books; it's about creating a vibrant third space where stories flow freely, where strangers become companions.",
       image: "https://res.cloudinary.com/decks92gf/image/upload/v1748445808/WhatsApp_Image_2025-05-28_at_20.52.05_p1mmo5.webp",
