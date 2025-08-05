@@ -199,9 +199,9 @@ function Projects({containerRef, show, setShow, sound, height, setHeight }) {
                   <div className={`font-lato font-bold italic text-[#FB3E5A] uppercase text-4xl`}>{proj.name}</div>
                   <div className={`font-light font-lato`}>{proj.description}</div>
                   <div className={`flex font-lato font-light italic text-[#5E9487] gap-3 `}>
-                  <a className={`underline`} >Github</a>
-                  <a className={`underline`} >Demo</a>
-                  <a className={`underline`} >Learn More</a>
+                  <a href={`${proj.github}`} className={`underline`} >Github</a>
+                  <a href={`${proj.demo}`} className={`underline`} >Demo</a>
+                  <a href={`${proj.link}`} className={`underline`} >Learn More</a>
                 </div>
                 </div>
               </div>
